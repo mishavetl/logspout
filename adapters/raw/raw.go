@@ -71,9 +71,9 @@ func (a *Adapter) Stream(logstream chan *router.Message) {
 		_, err = a.conn.Write(buf.Bytes())
 		if err != nil {
 			log.Println("raw:", err)
-			if _, ok := a.conn.(*net.UDPConn); !ok {
-				return
-			}
+			// if _, ok := a.conn.(*net.UDPConn); !ok {
+				// return
+			// }
 		}
 	}
 }
